@@ -1,12 +1,11 @@
-import './Game.css'
-import useWindowDimensions from '../../Helpers/Helpers'
+import { 
+    useWindowDimensions,
+    URL_PRIVATE
+} from '../../helpers/Helpers'
 import World from '../World/World'
 
 const Game = () => {
     const { height, width } = useWindowDimensions()
-
-    const url_private = "http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000"
-
     async function getNumber(url) {
         var response = await fetch(url)
         var data = await response.json()
@@ -15,6 +14,8 @@ const Game = () => {
 
         return data[0]
     }
+
+    console.log(getNumber(URL_PRIVATE))
 
     return (
             <>

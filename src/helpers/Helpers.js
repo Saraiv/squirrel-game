@@ -1,9 +1,13 @@
-import { useState, useEffect } from 'react'
+import { 
+  useState, 
+  useEffect 
+} from 'react'
 
 export const WORLD_SIZE = 9
 export const TILE_ASPECT_RATIO = 1 / 0.75
+export const URL_PRIVATE = "http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000"
 
-export default function useWindowDimensions() {
+export const useWindowDimensions = () => {
     const hasWindow = typeof window !== 'undefined'
   
     function getWindowDimensions() {

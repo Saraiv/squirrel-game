@@ -1,4 +1,3 @@
-import './Landscape.css'
 import React from 'react'
 import {
     road,
@@ -8,8 +7,11 @@ import {
     roadGrassBelow,
     waterGrassAbove,
     waterGrassBelow
-} from '../../Helpers/Images'
-import { WORLD_SIZE, TILE_ASPECT_RATIO } from '../../Helpers/Helpers'
+} from '../../helpers/Images'
+import { 
+    WORLD_SIZE, 
+    TILE_ASPECT_RATIO 
+} from '../../helpers/Helpers'
 import Tile from '../Tile/Tile'
 
 const Landscape = () => { 
@@ -30,12 +32,12 @@ const Landscape = () => {
         else if(i === 8)
             tiles.push(Array(WORLD_SIZE).fill('waterGrassAbove'))
     
-    const yOffset = (100 / WORLD_SIZE) * TILE_ASPECT_RATIO / 3
+    const yOffset = (100 / WORLD_SIZE) * TILE_ASPECT_RATIO / 1.8
 
     return(
         <>
             {tiles.map((row, y) => {
-                const yBase = y * yOffset
+                const yBase = y !== 2 ? y * yOffset : y * yOffset * 1.25
                 const xBase = 50 - (100 / 18) * y
                 return row.map((tile, x) => {
                     const z = x + 100
@@ -62,7 +64,6 @@ const Landscape = () => {
                     else if(tile === 'roadGrassBelow'){
                         alt = tile
                         src = roadGrassBelow
-
                     }
                     else if(tile === 'waterGrassAbove'){
                         alt = tile
@@ -72,8 +73,6 @@ const Landscape = () => {
                         alt = tile
                         src = waterGrassBelow
                     }
-
-                    console.log("Alt: ", alt, " Src: ", src)
 
                     return <Tile src={src} alt={alt} x={xAbs} y={yAbs} z={z} key={`${x}${y}`} />
                 })

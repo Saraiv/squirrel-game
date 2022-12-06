@@ -1,5 +1,4 @@
 import Landscape from '../Landscape/Landscape'
-import './World.css'
 
 const World = () => {
     return(

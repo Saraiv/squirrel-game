@@ -1,6 +1,4 @@
-import './Tile.css'
-
-const Tile = (src, alt, x, y, z) => {
+const Tile = ({ src, alt, x, y, z }) => {
     return(
         <img
             alt={alt}

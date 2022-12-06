@@ -1,6 +1,0 @@
-.tile{
-    position: absolute;
-    width: calc(100% / 9);
-    height: auto;
-    transform: translate(-50%);
-}
