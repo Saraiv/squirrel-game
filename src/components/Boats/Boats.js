@@ -3,81 +3,81 @@ import { atom, useRecoilState } from 'recoil'
 import { useInterval } from '../../hooks/useInterval'
 import MovingObject from '../MovingObject/MovingObject'
 
-const Trucks = () => {
-    const trucksState = atom({
-        key: "trucksState",
+const Boats = () => {
+    const boatsState = atom({
+        key: "boatsState",
         default: [
             { 
                 x: -1, 
-                y: 5, 
+                y: 2, 
                 dir: 'down', 
                 id: Math.random().toString(36).substr(2, 9) 
             },
             { 
                 x: 9, 
-                y: 6, 
+                y: 1, 
                 dir: 'up', 
                 id: Math.random().toString(36).substr(2, 9) 
             }
         ]
     })
-    const [trucks, setTrucks] = useRecoilState(trucksState)
+    const [boats, setBoats] = useRecoilState(boatsState)
 
-    const moveTrucks = useCallback(() => {
-        let trucksCopy = [...trucks]
-        trucksCopy = trucksCopy.map((truck) => {
-            if(truck.dir === 'up'){
+    const moveBoats = useCallback(() => {
+        let boatsCopy = [...boats]
+        boatsCopy = boatsCopy.map((boat) => {
+            if(boat.dir === 'up'){
                 return {
-                    ...truck,
-                    x: parseInt(truck.x) - 1
+                    ...boat,
+                    x: parseInt(boat.x) - 1
                 }
             } else {
                 return {
-                    ...truck,
-                    x: parseInt(truck.x) + 1
+                    ...boat,
+                    x: parseInt(boat.x) + 1
                 }
             }
         })
         
-        const newTrucks = []
-        if(trucksCopy.filter((truck) => truck.x === 7 || truck.x === 1).length){
-            newTrucks.push({
+        const newBoats = []
+        if(boatsCopy.filter((boat) => boat.x === 7 || boat.x === 1).length){
+            newBoats.push({
                 id: Math.random().toString(36).substr(2, 9),
                 x: 9,
-                y: 6,
+                y: 1,
                 dir: 'up',
             })
-            newTrucks.push({
+            newBoats.push({
                 id: Math.random().toString(36).substr(2, 9),
                 x: -1,
-                y: 5,
+                y: 2,
                 dir: 'down',
             })
         }
 
-        setTrucks(trucksCopy
-            .filter((truck) => {
-                return truck.x >= -1 && truck.x <= 9;
+        setBoats(boatsCopy
+            .filter((boat) => {
+                return boat.x >= -1 && boat.x <= 9;
             })
-          .concat(newTrucks)
+          .concat(newBoats)
         )
-    }, [trucks, setTrucks])
+    }, [boats, setBoats])
 
     useInterval(() => {
-        moveTrucks()
+        moveBoats()
     }, 350)
 
     return(
         <>
             {
-                trucks.map((truck) => {
+                boats.map((boat) => {
                     return (
                         <MovingObject
-                            key={truck.id}
-                            x={truck.x} 
-                            y={truck.y}
-                            dir={truck.dir}
-                            type='truck'
+                            key={boat.id}
+                            x={boat.x} 
+                            y={boat.y}
+                            dir={boat.dir}
+                            type='boat'
                         />
                     )
                 })
@@ -86,4 +86,4 @@ const Trucks = () => {
     )
 }
 
-export default Trucks
+export default Boats

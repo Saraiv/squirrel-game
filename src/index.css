@@ -63,3 +63,7 @@ img{
   z-index: 1000;
   transition: top 0.35s linear, left 0.35s linear, opacity 0.5s linear;
 }
+
+.boat{
+  transform: rotate(-12deg);
+}
