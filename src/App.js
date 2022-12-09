@@ -1,10 +1,13 @@
+import { RecoilRoot } from 'recoil'
 import Game from './components/Game/Game'
 
 const App = () => {
   return (
-    <div className="App">
-      <Game />
-    </div>
+    <RecoilRoot>
+      <div className="App">
+        <Game />
+      </div>
+    </RecoilRoot>
   )
 }
 

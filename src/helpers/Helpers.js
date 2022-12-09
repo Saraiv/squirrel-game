@@ -34,3 +34,16 @@ export const useWindowDimensions = () => {
   
     return windowDimensions
 }
+
+/*const { height, width } = useWindowDimensions()
+
+async function getNumber(url) {
+    var response = await fetch(url)
+    var data = await response.json()
+
+    console.log(data[0])
+
+    return data[0]
+}
+
+console.log(getNumber(URL_PRIVATE))*/
