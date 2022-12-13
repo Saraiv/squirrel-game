@@ -12,13 +12,13 @@ const Boats = () => {
                 x: -1, 
                 y: 2, 
                 dir: 'down', 
-                id: Math.random().toString(36).substr(2, 9) 
+                id: Math.random().toString(36).substring(2, 9) 
             },
             { 
                 x: 9, 
                 y: 1, 
                 dir: 'up', 
-                id: Math.random().toString(36).substr(2, 9) 
+                id: Math.random().toString(36).substring(2, 9) 
             }
         ]
     })
@@ -43,13 +43,13 @@ const Boats = () => {
         const newBoats = []
         if(boatsCopy.filter((boat) => boat.x === 7 || boat.x === 1).length){
             newBoats.push({
-                id: Math.random().toString(36).substr(2, 9),
+                id: Math.random().toString(36).substring(2, 9),
                 x: 9,
                 y: 1,
                 dir: 'up',
             })
             newBoats.push({
-                id: Math.random().toString(36).substr(2, 9),
+                id: Math.random().toString(36).substring(2, 9),
                 x: -1,
                 y: 2,
                 dir: 'down',

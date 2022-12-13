@@ -2,23 +2,24 @@ import { useCallback } from 'react'
 import { atom, useRecoilState } from 'recoil'
 import { useInterval } from '../../hooks/useInterval'
 import MovingObject from '../MovingObject/MovingObject'
+// import { RANDOM_NUMBER } from '../../helpers/Helpers'
 import React from 'react'
 
 const Trucks = () => {
     const trucksState = atom({
-        key: "trucksState",
+        key: 'trucksState',
         default: [
             { 
                 x: -1, 
                 y: 5, 
                 dir: 'down', 
-                id: Math.random().toString(36).substr(2, 9) 
+                id: Math.random().toString(36).substring(2, 9) 
             },
             { 
                 x: 9, 
                 y: 6, 
                 dir: 'up', 
-                id: Math.random().toString(36).substr(2, 9) 
+                id: Math.random().toString(36).substring(2, 9)
             }
         ]
     })
@@ -30,12 +31,12 @@ const Trucks = () => {
             if(truck.dir === 'up'){
                 return {
                     ...truck,
-                    x: parseInt(truck.x) - 1
+                    x: parseInt(truck.x - 1) 
                 }
             } else {
                 return {
                     ...truck,
-                    x: parseInt(truck.x) + 1
+                    x: parseInt(truck.x + 1) 
                 }
             }
         })
@@ -43,30 +44,28 @@ const Trucks = () => {
         const newTrucks = []
         if(trucksCopy.filter((truck) => truck.x === 7 || truck.x === 1).length){
             newTrucks.push({
-                id: Math.random().toString(36).substr(2, 9),
+                id: Math.random().toString(36).substring(2, 9),
                 x: 9,
                 y: 6,
                 dir: 'up',
             })
             newTrucks.push({
-                id: Math.random().toString(36).substr(2, 9),
+                id: Math.random().toString(36).substring(2, 9),
                 x: -1,
                 y: 5,
                 dir: 'down',
             })
         }
 
-        setTrucks(trucksCopy
-            .filter((truck) => {
-                return truck.x >= -1 && truck.x <= 9;
-            })
-          .concat(newTrucks)
+        setTrucks(trucksCopy.filter((truck) => {
+                return truck.x >= -1 && truck.x <= 9
+            }).concat(newTrucks)
         )
     }, [trucks, setTrucks])
 
     useInterval(() => {
         moveTrucks()
-    }, 350)
+    }, 1000) //RANDOM_NUMBER
 
     return(
         <>
