@@ -12,7 +12,6 @@ import {
     WORLD_SIZE,
     TILE_ASPECT_RATIO
 } from '../../helpers/Helpers'
-import React from 'react'
 
 const Frog = () => {
     const frogState = atom({
@@ -39,7 +38,7 @@ const Frog = () => {
         src = frogSW
     else if(frog.dir === 'left')
         src = frogNW
-    else if(frog.dir === 'right')
+    else if(frog.dir === 'righ')
         src = frogSE
 
     return <img src={src} alt='frog' className={`frog ${frog.dead && 'dead'}`} style={{left: `${xAbs}%`, top: `${yAbs}%`}} />

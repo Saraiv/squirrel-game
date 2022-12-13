@@ -1,10 +1,13 @@
+import React from 'react'
 import { RecoilRoot } from 'recoil'
-import Game from './components/Game/Game'
+import ScoreBar from "./components/Game/ScoreBar"
+import Game from "./components/Game/Game"
 
-const App = () => {
+function App() {
   return (
     <RecoilRoot>
       <div className="App">
+        <ScoreBar />
         <Game />
       </div>
     </RecoilRoot>

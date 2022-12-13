@@ -1,4 +1,4 @@
-import Inputs from '../Frog/Inputs'
+// import Inputs from '../Frog/Inputs'
 import World from '../World/World'
 // import {
 //     isDrowning,
@@ -14,13 +14,11 @@ import World from '../World/World'
 //     useRecoilValue 
 // } from 'recoil'
 // import { useEffect } from 'react'
-import React from 'react'
 
 const Game = () => {
     return (
             <>
                 <World />
-                <Inputs />
             </>
     )   
 }

@@ -2,7 +2,6 @@ import { useCallback } from 'react'
 import { atom, useRecoilState } from 'recoil'
 import { useInterval } from '../../hooks/useInterval'
 import MovingObject from '../MovingObject/MovingObject'
-import React from 'react'
 
 const Trucks = () => {
     const trucksState = atom({

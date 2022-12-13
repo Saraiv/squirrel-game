@@ -8,7 +8,6 @@ import {
     WORLD_SIZE,
     TILE_ASPECT_RATIO
 } from '../../helpers/Helpers'
-import React from 'react'
 
 const MovingObject = ({ x, y, dir, type }) => {
     const yOffset = ((100 / WORLD_SIZE) * TILE_ASPECT_RATIO) / 1.8

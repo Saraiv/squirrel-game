@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Tile = ({ src, alt, x, y, z }) => {
     return(
         <img

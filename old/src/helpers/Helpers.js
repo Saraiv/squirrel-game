@@ -1,39 +1,39 @@
-// import { 
-//   useState, 
-//   useEffect 
-// } from 'react'
+import { 
+  useState, 
+  useEffect 
+} from 'react'
 
 export const WORLD_SIZE = 9
 export const TILE_ASPECT_RATIO = 1 / 0.75
 export const WATER_TILES_Y_INDEXES = [1, 2]
 
-// export const useWindowDimensions = () => {
-//     const hasWindow = typeof window !== 'undefined'
+export const useWindowDimensions = () => {
+    const hasWindow = typeof window !== 'undefined'
   
-//     const getWindowDimensions = () => {
-//       const width = hasWindow ? window.innerWidth : null
-//       const height = hasWindow ? window.innerHeight : null
-//       return {
-//         width,
-//         height,
-//       }
-//     }
+    const getWindowDimensions = () => {
+      const width = hasWindow ? window.innerWidth : null
+      const height = hasWindow ? window.innerHeight : null
+      return {
+        width,
+        height,
+      }
+    }
   
-//     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
   
-//     useEffect(() => {
-//       if (hasWindow) {
-//         function handleResize() {
-//           setWindowDimensions(getWindowDimensions())
-//         }
+    useEffect(() => {
+      if (hasWindow) {
+        function handleResize() {
+          setWindowDimensions(getWindowDimensions())
+        }
   
-//         window.addEventListener('resize', handleResize)
-//         return () => window.removeEventListener('resize', handleResize)
-//       }
-//     }, [hasWindow])
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+      }
+    }, [hasWindow])
   
-//     return windowDimensions
-// }
+    return windowDimensions
+}
 
 /*const { height, width } = useWindowDimensions()
 
