@@ -15,6 +15,7 @@ import {
 } from 'recoil'
 import { useEffect } from 'react'
 import React from 'react'
+import party from 'party-js'
 
 const Game = () => {
     const scoreState = atom({
@@ -65,6 +66,11 @@ const Game = () => {
             if (score + 1 > highScore)
                 setHighScore(score + 1)
             setFrog({ ...frog, x: 4, y: 8 })
+            party.confetti(document.body, {
+                count: party.variation.range(0, 100),
+	            size: party.variation.range(0.6, 1.4),
+                speed: party.variation.range(300, 1000)
+            })
         }
     }, [frog, setFrog, score, setScore, highScore, setHighScore])
 

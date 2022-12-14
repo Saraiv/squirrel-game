@@ -83,7 +83,7 @@ img {
   z-index: 900;
   width: 5vw;
   transform: translateX(-50%);
-  transition: top 0.35s linear, left 0.35s linear, opacity 0.5s linear;
+  transition: top 0.65s linear, left 0.65s linear, opacity 0.5s linear;
 }
 
 .truck {
@@ -91,7 +91,7 @@ img {
   z-index: 1100;
   width: 5vw;
   height: 5vw;
-  transition: top 1s linear, left 1s linear, opacity 0.5s linear;
+  transition: top .35s linear, left .35s linear, opacity 0.5s linear;
 }
 .buttons {
   position: fixed;

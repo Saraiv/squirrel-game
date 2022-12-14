@@ -30,12 +30,12 @@ const Boats = () => {
             if(boat.dir === 'up'){
                 return {
                     ...boat,
-                    x: parseInt(boat.x) - 1
+                    x: parseInt(boat.x - 1) 
                 }
             } else {
                 return {
                     ...boat,
-                    x: parseInt(boat.x) + 1
+                    x: parseInt(boat.x + 1) 
                 }
             }
         })
@@ -66,7 +66,7 @@ const Boats = () => {
 
     useInterval(() => {
         moveBoats()
-    }, 350)
+    }, 650)
 
     return(
         <>

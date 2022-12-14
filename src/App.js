@@ -1,7 +1,7 @@
 import React from 'react'
 import { RecoilRoot } from 'recoil'
-import ScoreBar from "./components/Game/ScoreBar"
-import Game from "./components/Game/Game"
+import ScoreBar from './components/Game/ScoreBar'
+import Game from './components/Game/Game'
 
 function App() {
   return (

@@ -36,7 +36,6 @@ const Inputs = () => {
 
     const keyPressHandler = useCallback(
         (e) => {
-            console.log('entra aqui')
             if(e.preventDefault)
                 e.preventDefault()
             
