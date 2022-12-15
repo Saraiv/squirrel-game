@@ -44,8 +44,9 @@ const Game = () => {
                 setGameOver(true)
             if (!frog.dead)
                 setFrog({ ...frog, dead: true })
+            setScore(0)
         }
-    }, [trucks, frog, setFrog, gameOver, setGameOver])
+    }, [trucks, frog, setFrog, gameOver, setGameOver, setScore])
 
     useEffect(() => {
         if (boats && isRidingBoat(frog, boats)) {
