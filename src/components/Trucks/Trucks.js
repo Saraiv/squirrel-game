@@ -2,6 +2,7 @@ import { useCallback } from 'react'
 import { atom, useRecoilState } from 'recoil'
 import { useInterval } from '../../hooks/useInterval'
 import MovingObject from '../MovingObject/MovingObject'
+import { randomNumber } from '../../helpers/Helpers'
 import React from 'react'
 
 const Trucks = () => {
@@ -64,7 +65,7 @@ const Trucks = () => {
 
     useInterval(() => {
         moveTrucks()
-    }, 1000)
+    }, randomNumber)
 
     return(
         <>
