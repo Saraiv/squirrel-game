@@ -16,6 +16,7 @@ import {
 import { useEffect } from 'react'
 import React from 'react'
 import party from 'party-js'
+import Snowfall from 'react-snowfall'
 
 const Game = () => {
     const scoreState = atom({
@@ -79,6 +80,7 @@ const Game = () => {
             <>
                 <World />
                 <Inputs />
+                <Snowfall />
             </>
     )   
 }
