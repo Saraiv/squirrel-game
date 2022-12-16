@@ -1,14 +1,12 @@
 export const WORLD_SIZE = 9
 export const TILE_ASPECT_RATIO = 1 / 0.75
 export const WATER_TILES_Y_INDEXES = [1, 2]
-export const randomNumber = Math.random() * (1300 - 800) + 800
-const URL_PRIVATE = 'http://www.randomnumberapi.com/api/v1.0/random?min=800&max=1000'
+const URL_PRIVATE = 'http://www.randomnumberapi.com/api/v1.0/random?min=800&max=1300'
 
 
-export const RANDOM_NUMBER = async function(){
-  const response = await fetch(URL_PRIVATE)
-  const data = await response.json()
-  return data[0]
+export function getRandom() {
+  return fetch(URL_PRIVATE)
+    .then(data => data.json())
 }
 
 export const isTruckCollision = (frog, trucks) => {
