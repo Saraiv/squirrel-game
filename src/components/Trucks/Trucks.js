@@ -2,14 +2,14 @@ import { useCallback, useEffect, useState } from 'react'
 import { atom, useRecoilState } from 'recoil'
 import { useInterval } from '../../hooks/useInterval'
 import MovingObject from '../MovingObject/MovingObject'
-import { getRandom } from '../../helpers/Helpers'
+import { getRandomTrucks } from '../../helpers/Helpers'
 import React from 'react'
 
 const Trucks = () => {
     const [random, setRandom] = useState(0)
     useEffect(() => {
         let mounted = true
-        getRandom().then(number => {
+        getRandomTrucks().then(number => {
             if(mounted)
                 setRandom(number)
         })

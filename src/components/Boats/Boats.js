@@ -1,10 +1,21 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { atom, useRecoilState } from 'recoil'
 import { useInterval } from '../../hooks/useInterval'
 import MovingObject from '../MovingObject/MovingObject'
-import React from "react";
+import { getRandomBoats } from '../../helpers/Helpers'
+import React from 'react'
 
 const Boats = () => {
+    const [random, setRandom] = useState(0)
+    useEffect(() => {
+        let mounted = true
+        getRandomBoats().then(number => {
+            if(mounted)
+                setRandom(number)
+        })
+        return () => mounted = false
+    }, [])
+
     const boatsState = atom({
         key: 'boatsState',
         default: [
@@ -66,7 +77,7 @@ const Boats = () => {
 
     useInterval(() => {
         moveBoats()
-    }, 650)
+    }, random)
 
     return(
         <>

@@ -1,11 +1,17 @@
 export const WORLD_SIZE = 9
 export const TILE_ASPECT_RATIO = 1 / 0.75
 export const WATER_TILES_Y_INDEXES = [1, 2]
-const URL_PRIVATE = 'http://www.randomnumberapi.com/api/v1.0/random?min=800&max=1300'
+const URL_PRIVATE_TRUCKS = 'http://www.randomnumberapi.com/api/v1.0/random?min=800&max=1300'
+const URL_PRIVATE_BOATS = 'http://www.randomnumberapi.com/api/v1.0/random?min=800&max=1000'
 
 
-export function getRandom() {
-  return fetch(URL_PRIVATE)
+export function getRandomTrucks() {
+  return fetch(URL_PRIVATE_TRUCKS)
+    .then(data => data.json())
+}
+
+export function getRandomBoats() {
+  return fetch(URL_PRIVATE_BOATS)
     .then(data => data.json())
 }
 
